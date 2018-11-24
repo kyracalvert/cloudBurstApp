@@ -48,4 +48,17 @@ export class LoginPage {
     });
   }
 
+//   tryLogin(value){
+//     this.authService.doLogin(value)
+//     .then(res => {
+//       this.navCtrl.push(MenuPage);
+//     }, err => {
+//       this.errorMessage = err.message;
+//     })
+//   }
+
+//   goRegisterPage(){
+//     this.navCtrl.push(RegisterPage);
+//   }
+
 }
