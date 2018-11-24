@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
-// import { RegisterPage } from '../register/register';
+import { RegisterPage } from '../register/register';
 // import { MenuPage } from '../menu/menu';
 
 import { AuthService } from '../services/auth.service';
@@ -48,17 +48,17 @@ export class LoginPage {
     });
   }
 
-//   tryLogin(value){
-//     this.authService.doLogin(value)
-//     .then(res => {
-//       this.navCtrl.push(MenuPage);
-//     }, err => {
-//       this.errorMessage = err.message;
-//     })
-//   }
+  tryLogin(value){
+    this.authService.doLogin(value)
+    .then(res => {
+      this.navCtrl.push(MenuPage);
+    }, err => {
+      this.errorMessage = err.message;
+    })
+  }
 
-//   goRegisterPage(){
-//     this.navCtrl.push(RegisterPage);
-//   }
+  goRegisterPage(){
+    this.navCtrl.push(RegisterPage);
+  }
 
 }
