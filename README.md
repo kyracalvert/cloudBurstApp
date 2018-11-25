@@ -20,6 +20,8 @@ These instructions will get you a copy of the project up and running on your loc
 1. `npm install`
 2. `ionic serve`
 
+*note: for best viewing, please use your browser's developer tools to simulate displaying on a mobile device.* 
+
 ## Screenshot -- Video Walkthrough
 ![walkthrough](https://thumbs.gfycat.com/QuestionableCrispHoki-size_restricted.gif)
 
