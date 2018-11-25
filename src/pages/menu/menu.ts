@@ -42,9 +42,9 @@ export class MenuPage {
       image: item.image,
       id: id
     }
-    this.navCtrl.push(DetailsPage, {
-      data: data
-    })
+    // this.navCtrl.push(DetailsPage, {
+    //   data: data
+    // })
   }
 
   openNewUserModal(){

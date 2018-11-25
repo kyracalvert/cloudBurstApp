@@ -31,6 +31,7 @@ export class FirebaseService {
   updateTask(taskKey, value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
+      // references the 'people' and 'tasks' database collections
       this.afs.collection('people').doc(currentUser.uid).collection('tasks').doc(taskKey).set(value)
       .then(
         res => resolve(res),
