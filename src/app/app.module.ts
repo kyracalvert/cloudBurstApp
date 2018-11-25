@@ -9,7 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { MenuPage } from '../pages/menu/menu';
 // import { DetailsPage } from '../pages/details/details';
-// import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
+import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
 
 import { ImagePicker } from '@ionic-native/image-picker';
 
@@ -28,7 +28,7 @@ import { environment } from '../environment/environment';
     LoginPage,
     RegisterPage,
     MenuPage,
-    // NewTaskModalPage,
+    NewTaskModalPage,
     // DetailsPage
   ],
   imports: [
@@ -46,7 +46,7 @@ import { environment } from '../environment/environment';
     LoginPage,
     RegisterPage,
     MenuPage,
-    // NewTaskModalPage,
+    NewTaskModalPage,
     // DetailsPage
   ],
   providers: [

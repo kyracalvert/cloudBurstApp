@@ -10,6 +10,7 @@ export class FirebaseService {
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore){}
 
+  // get a list of user's tasks
   getTasks(){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -26,6 +27,7 @@ export class FirebaseService {
     this.snapshotChangesSubscription.unsubscribe();
   }
 
+  // update / edit an existing task
   updateTask(taskKey, value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -36,7 +38,8 @@ export class FirebaseService {
       )
     })
   }
-
+ 
+  // delete an existing task
   deleteTask(taskKey){
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -48,8 +51,10 @@ export class FirebaseService {
     })
   }
 
+  // add / create a new task
   createTask(value){
     return new Promise<any>((resolve, reject) => {
+      // tasks are assigned to current users
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('people').doc(currentUser.uid).collection('tasks').add({
         title: value.title,
@@ -82,6 +87,8 @@ export class FirebaseService {
     return new Promise<any>((resolve, reject) => {
       let storageRef = firebase.storage().ref();
       let imageRef = storageRef.child('image').child(randomId);
+      // putString(image64, 'data_url') is a firebase method whose response gives 
+      // the url that was assigned to the image uploaded to the firebase storage.
       this.encodeImageUri(imageURI, function(image64){
         imageRef.putString(image64, 'data_url')
         .then(snapshot => {

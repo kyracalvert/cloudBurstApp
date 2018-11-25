@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-// import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
+import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
 // import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
 
@@ -42,18 +42,18 @@ export class MenuPage {
       image: item.image,
       id: id
     }
-    // this.navCtrl.push(DetailsPage, {
-    //   data: data
-    // })
+    this.navCtrl.push(DetailsPage, {
+      data: data
+    })
   }
 
-//   openNewUserModal(){
-//     let modal = this.modalCtrl.create(NewTaskModalPage);
-//     modal.onDidDismiss(data => {
-//       this.getData();
-//     });
-//     modal.present();
-//   }
+  openNewUserModal(){
+    let modal = this.modalCtrl.create(NewTaskModalPage);
+    modal.onDidDismiss(data => {
+      this.getData();
+    });
+    modal.present();
+  }
 
   logout(){
     this.authService.doLogout()
