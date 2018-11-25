@@ -1,3 +1,4 @@
+// syncing application with firebase
 export const environment = {
   production: false,
   firebase: {

@@ -4,10 +4,23 @@ page-login {
    color: #bf3e3e;
   }
 
+  .form {
+    margin-top: 20%;
+  }
+
   .go-to-register
   {
     text-align: center;
     margin-top: 20px;
+  }
+
+  .login-msg {
+    color: #00cc13;
+  }
+
+  .signin {
+   padding-left: 2%;
+   position: relative;
   }
 
   .submit-btn

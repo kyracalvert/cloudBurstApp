@@ -12,7 +12,6 @@ import { LoginPage } from '../login/login';
 })
 
 export class MenuPage {
-
   items: Array<any>;
 
   constructor(
@@ -20,20 +19,20 @@ export class MenuPage {
     private modalCtrl: ModalController,
     private authService: AuthService,
     private firebaseService: FirebaseService
-  ) {}
+  ) { }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.getData();
   }
 
-  getData(){
+  getData() {
     this.firebaseService.getTasks()
-    .then(tasks => {
-      this.items = tasks;
-    })
+      .then(tasks => {
+        this.items = tasks;
+      })
   }
 
-  viewDetails(id, item){
+  viewDetails(id, item) {
     // debugger
     let data = {
       title: item.title,
@@ -46,7 +45,7 @@ export class MenuPage {
     })
   }
 
-  openNewUserModal(){
+  openNewUserModal() {
     let modal = this.modalCtrl.create(NewTaskModalPage);
     modal.onDidDismiss(data => {
       this.getData();
@@ -54,10 +53,10 @@ export class MenuPage {
     modal.present();
   }
 
-  logout(){
+  logout() {
     this.authService.doLogout()
-    .then(res => {
-      this.navCtrl.push(LoginPage);
-    })
+      .then(res => {
+        this.navCtrl.push(LoginPage);
+      })
   }
 }

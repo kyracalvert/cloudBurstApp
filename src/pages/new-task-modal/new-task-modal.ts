@@ -9,7 +9,6 @@ import { ImagePicker } from '@ionic-native/image-picker';
   templateUrl: 'new-task-modal.html'
 })
 export class NewTaskModalPage {
-
   validations_form: FormGroup;
   image: any;
   loading: any;
@@ -25,11 +24,11 @@ export class NewTaskModalPage {
     this.loading = this.loadingCtrl.create();
   }
 
-  ionViewWillLoad(){
+  ionViewWillLoad() {
     this.resetFields()
   }
 
-  resetFields(){
+  resetFields() {
     this.image = "./assets/imgs/default_image.jpg";
     this.validations_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
@@ -38,75 +37,73 @@ export class NewTaskModalPage {
   }
 
   dismiss() {
-   this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss();
   }
 
-  onSubmit(value){
+  onSubmit(value) {
     let data = {
       title: value.title,
       description: value.description,
       image: this.image
     }
     this.firebaseService.createTask(data)
-    .then(
-      res => {
-        this.resetFields();
-        this.viewCtrl.dismiss();
-          
-      let toast = this.toastCtrl.create({
-        message: 'Success!',
-        duration: 3000,
-        position: 'top'
-      });
-      console.log('success!')
-      toast.onDidDismiss(() => {
-        console.log('Dismissed toast');
-      })
-      toast.present();
-      }  
-    )
+      .then(
+        res => {
+          this.resetFields();
+          this.viewCtrl.dismiss();
+          let toast = this.toastCtrl.create({
+            message: 'Success!',
+            duration: 3000,
+            position: 'top'
+          });
+          console.log('success!')
+          toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+          })
+          toast.present();
+        }
+      )
   }
 
-  openImagePicker(){
+  openImagePicker() {
     this.imagePicker.hasReadPermission()
-    .then((result) => {
-      if(result == false){
-        // no callbacks required as this opens a popup which returns async
-        this.imagePicker.requestReadPermission();
-      }
-      else if(result == true){
-        this.imagePicker.getPictures({
-          maximumImagesCount: 1
-        }).then(
-          (results) => {
-            for (var i = 0; i < results.length; i++) {
-              this.uploadImageToFirebase(results[i]);
-            }
-          }, (err) => console.log(err)
-        );
-        
-      }
-    }, (err) => {
-      console.log(err);
-    });
+      .then((result) => {
+        if (result == false) {
+          // no callbacks required as this opens a popup which returns async
+          this.imagePicker.requestReadPermission();
+        }
+        else if (result == true) {
+          this.imagePicker.getPictures({
+            maximumImagesCount: 1
+          }).then(
+            (results) => {
+              for (var i = 0; i < results.length; i++) {
+                this.uploadImageToFirebase(results[i]);
+              }
+            }, (err) => console.log(err)
+          );
+
+        }
+      }, (err) => {
+        console.log(err);
+      });
   }
 
-  uploadImageToFirebase(image){
+  uploadImageToFirebase(image) {
     this.loading.present();
     image = normalizeURL(image);
     let randomId = Math.random().toString(36).substr(2, 5);
 
     // uploads img to firebase storage
     this.firebaseService.uploadImage(image, randomId)
-    .then(photoURL => {
-      this.image = photoURL;
-      this.loading.dismiss();
-      let toast = this.toastCtrl.create({
-        message: 'Image was updated successfully',
-        duration: 3000
-      });
-      toast.present();
+      .then(photoURL => {
+        this.image = photoURL;
+        this.loading.dismiss();
+        let toast = this.toastCtrl.create({
+          message: 'Image was updated successfully',
+          duration: 3000
+        });
+        toast.present();
       })
   }
-
 }

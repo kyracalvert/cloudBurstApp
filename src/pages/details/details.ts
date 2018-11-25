@@ -9,12 +9,10 @@ import { ImagePicker } from '@ionic-native/image-picker';
   templateUrl: 'details.html'
 })
 export class DetailsPage {
-
   validations_form: FormGroup;
   image: any;
   item: any;
   loading: any;
-
   constructor(
     private navParams: NavParams,
     private alertCtrl: AlertController,
@@ -76,8 +74,14 @@ export class DetailsPage {
                 res => this.viewCtrl.dismiss(),
                 err => console.log(err)
               )
-            let yesDelete = this.alertCtrl.create({
+            // this alert is not working as expected -- 
+            // alert does not position top or timeout
+            // user must click outside of text box
+            // alert successfully implemented via new-task-modal.ts
+            let yesDelete = this.alertCtrl.create(<any>{
               message: 'Success!',
+              duration: 3000,
+              position: 'top'
             })
             yesDelete.present();
           }
