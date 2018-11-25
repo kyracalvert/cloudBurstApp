@@ -42,18 +42,6 @@ export class NewTaskModalPage {
   }
 
   onSubmit(value){
-      // toast should be moved after .then
-      // positioned here in the interim until connected to firebase database
-      let toast = this.toastCtrl.create({
-        message: 'Success! Head back to the main menu.',
-        duration: 3000,
-        position: 'top'
-      });
-      console.log('success!')
-      toast.onDidDismiss(() => {
-        console.log('Dismissed toast');
-      })
-      toast.present();
     let data = {
       title: value.title,
       description: value.description,
@@ -64,6 +52,17 @@ export class NewTaskModalPage {
       res => {
         this.resetFields();
         this.viewCtrl.dismiss();
+          
+      let toast = this.toastCtrl.create({
+        message: 'Success!',
+        duration: 3000,
+        position: 'top'
+      });
+      console.log('success!')
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      })
+      toast.present();
       }  
     )
   }

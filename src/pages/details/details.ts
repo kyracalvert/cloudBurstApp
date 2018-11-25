@@ -71,17 +71,15 @@ export class DetailsPage {
         {
           text: 'Yes',
           handler: () => {
-            // toast should be moved after .then
-            // positioned here in the interim until connected to firebase database
-            let yesDelete = this.alertCtrl.create({
-              message: 'Success! Head back to the main menu.'
-            })
-            yesDelete.present();
             this.firebaseService.deleteTask(this.item.id)
               .then(
                 res => this.viewCtrl.dismiss(),
                 err => console.log(err)
               )
+            let yesDelete = this.alertCtrl.create({
+              message: 'Success!',
+            })
+            yesDelete.present();
           }
         }
       ]
