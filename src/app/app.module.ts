@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-// import { MenuPage } from '../pages/menu/menu';
+import { MenuPage } from '../pages/menu/menu';
 // import { DetailsPage } from '../pages/details/details';
 // import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
 
@@ -27,7 +27,7 @@ import { environment } from '../environment/environment';
     MyApp,
     LoginPage,
     RegisterPage,
-    // MenuPage,
+    MenuPage,
     // NewTaskModalPage,
     // DetailsPage
   ],
@@ -45,7 +45,7 @@ import { environment } from '../environment/environment';
     MyApp,
     LoginPage,
     RegisterPage,
-    // MenuPage,
+    MenuPage,
     // NewTaskModalPage,
     // DetailsPage
   ],
