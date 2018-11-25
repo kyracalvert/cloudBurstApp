@@ -6,7 +6,6 @@ import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
 import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
 
-
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html'

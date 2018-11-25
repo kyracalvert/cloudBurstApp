@@ -45,7 +45,7 @@ export class NewTaskModalPage {
       // toast should be moved after .then
       // positioned here in the interim until connected to firebase database
       let toast = this.toastCtrl.create({
-        message: 'New task created, press back to see your menu!',
+        message: 'Success! Head back to the main menu.',
         duration: 3000,
         position: 'top'
       });

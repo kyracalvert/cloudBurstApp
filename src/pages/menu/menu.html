@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="list-mini-content">
+  <h4 class="logged-in">You are logged in.</h4>
   <div class="list-mini">
     <ion-list>
       <ion-item *ngFor="let item of items" (click)="viewDetails(item.payload.doc.id,item.payload.doc.data())">
@@ -16,7 +17,7 @@
           <img [src]="item.payload.doc.data().image">
         </ion-thumbnail>
         <h2>{{item.payload.doc.data().title}}</h2>
-        <button ion-button clear item-end>Details</button>
+        <button color="secondary" ion-button clear item-end>Details</button>
       </ion-item>
     </ion-list>
   </div>
