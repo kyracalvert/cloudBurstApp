@@ -18,7 +18,7 @@ Then, within the project
 2. `ionic serve`
 
 ## Screenshot -- Video Walkthrough
-![walkthrough] (https://thumbs.gfycat.com/QuestionableCrispHoki-size_restricted.gif)
+![walkthrough](https://thumbs.gfycat.com/QuestionableCrispHoki-size_restricted.gif)
 
 ## Completed Features
 - [x] Authentication -- data is associated with a user and persists only for that user
