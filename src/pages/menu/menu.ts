@@ -3,7 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
 import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
-// import { DetailsPage } from '../details/details';
+import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
 
 
@@ -42,9 +42,9 @@ export class MenuPage {
       image: item.image,
       id: id
     }
-    // this.navCtrl.push(DetailsPage, {
-    //   data: data
-    // })
+    this.navCtrl.push(DetailsPage, {
+      data: data
+    })
   }
 
   openNewUserModal(){

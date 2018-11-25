@@ -42,6 +42,18 @@ export class NewTaskModalPage {
   }
 
   onSubmit(value){
+      // toast should be moved after .then
+      // positioned here in the interim until connected to firebase database
+      let toast = this.toastCtrl.create({
+        message: 'New task created, press back to see your menu!',
+        duration: 3000,
+        position: 'top'
+      });
+      console.log('success!')
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      })
+      toast.present();
     let data = {
       title: value.title,
       description: value.description,
@@ -52,7 +64,7 @@ export class NewTaskModalPage {
       res => {
         this.resetFields();
         this.viewCtrl.dismiss();
-      }
+      }  
     )
   }
 
@@ -73,6 +85,7 @@ export class NewTaskModalPage {
             }
           }, (err) => console.log(err)
         );
+        
       }
     }, (err) => {
       console.log(err);
@@ -84,7 +97,7 @@ export class NewTaskModalPage {
     image = normalizeURL(image);
     let randomId = Math.random().toString(36).substr(2, 5);
 
-    //uploads img to firebase storage
+    // uploads img to firebase storage
     this.firebaseService.uploadImage(image, randomId)
     .then(photoURL => {
       this.image = photoURL;
