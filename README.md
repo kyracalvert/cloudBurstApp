@@ -13,10 +13,10 @@ Accordingly, cloudBurst Rapid ToDo allows users to make and complete (delete!) d
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Installing
-This project requires Cordova as a global prerequisite 
-1. Install Cordova on your machine `npm install -g cordova ionic`
+##### Prerequisite:
+1. Install Cordova globally on your machine `npm install -g cordova ionic`
 
-Then, within the project
+##### Then, within the project:
 1. `npm install`
 2. `ionic serve`
 
