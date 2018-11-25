@@ -4,9 +4,9 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
+
 @Injectable()
 export class FirebaseService {
-
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore) { }
 
