@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [x] Logout
 
 ## Next Steps
-- [x] Swipe to delete
+- [ ] Swipe to delete
 
 ## Author
 Kyra Crawford Calvert
