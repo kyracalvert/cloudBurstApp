@@ -1,7 +1,7 @@
 # cloudBurst Rapid ToDo List
 This application exists in dedication to Cloudburst, SBC, a technology studio in NE Minneapolis focused on rapid software development, supporting sustainable entreprenuership, and the common good. 
 
-Accordingly, cloudBurst Rapid ToDo allows users to make and complete (delete!) daily ToDo lists, encouraging rapid progress through life's goals. 
+Accordingly, cloudBurst Rapid ToDo allows users to make and complete (delete!) daily ToDo lists, encouraging rapid progression  through life's goals. 
 
 ## Built with
 1. Angular
