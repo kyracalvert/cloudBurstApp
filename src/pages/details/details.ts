@@ -35,7 +35,7 @@ export class DetailsPage {
     this.image = this.item.image;
     this.validations_form = this.formBuilder.group({
       title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required)
+      description: new FormControl(this.item.description)
     });
   }
 
